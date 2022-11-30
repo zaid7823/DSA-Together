@@ -1,4 +1,37 @@
-struct pair getMinMax(long long int arr[], long long int n) {
+#include <stdio.h>
+
+struct pair
+{
+    long long int min;
+    long long int max;
+};
+
+// Driver Code Starts
+
+struct pair getMinMax(long long int arr[], long long int n) ;
+
+int main()
+{
+    long long int t, n, a[100002], i;
+    struct pair minmax;
+
+    scanf("%lld", &t);
+    while (t--)
+    {
+        scanf("%lld", &n);
+
+        for (i = 0; i < n; i++) scanf("%lld", &a[i]);
+        minmax = getMinMax(a, n);
+        printf("%lld %lld\n", minmax.min, minmax.max);
+    }
+    return 0;
+}   //  Driver Code Ends
+
+
+// Function Definition
+
+struct pair getMinMax(long long int arr[], long long int n)
+{
     int i;
     struct pair s;
     s.min = arr[0];
@@ -13,7 +46,6 @@ struct pair getMinMax(long long int arr[], long long int n) {
         {
             s.min = arr[i];
         }
-        return s;
     }
-    
+    return s;
 }
