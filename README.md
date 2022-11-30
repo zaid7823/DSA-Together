@@ -1,2 +1,3 @@
-# repo1
-My practice problems
+# DSA-Together
+Practice DSA Problems
+
