@@ -1,0 +1,74 @@
+// Dutch National Flag Algorithm using Control Structure
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+    public:
+    void sort012(int a[], int n)
+    {
+        int temp, low = 0;
+        int high = n-1;
+        int mid = 0;
+        while (mid <= high)
+        {
+            if (a[mid] == 0 && low != mid)  // when a[low] and a[mid] have the same value
+            {                               // but are not at the same index
+                temp = a[low];
+                a[low] = a[mid];
+                a[mid] = temp;
+                low++;
+                mid++;
+            }
+            else if (a[mid] == 0 && low == mid) // when a[low] and a[mid] have the same value
+            {                                   // and are at the same index
+                low++;
+                mid++;
+            }
+            else if (a[mid] == 1)
+            {
+                mid++;
+            }
+            else if (a[mid] == 2)
+            {
+                temp = a[high];
+                a[high] = a[mid];
+                a[mid] = temp;
+                high--;
+            }
+        }
+    } 
+};
+// -----------------------------------------
+
+// Driver Code
+int main()
+{
+    int t;
+    cin >> t;
+
+    while(t--)
+    {
+        int n;
+        cin >>n;
+        int a[n];
+        for(int i=0; i<n; i++)
+        {
+            cin >> a[i];
+        }
+
+        Solution ob;
+        ob.sort012(a, n);
+
+        for(int i=0;i<n;i++)
+        {
+            cout << a[i]  << " ";
+        }
+
+        cout << endl;
+        
+        
+    }
+    return 0;
+}
