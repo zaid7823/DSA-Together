@@ -11,7 +11,8 @@ struct node
     int data;
     struct node* next;
     
-    node(int x){
+    node(int x)
+    {
         data = x;
         next = NULL;
     }
@@ -38,7 +39,7 @@ struct node* push(struct node* head, int d)
 int GetNth(struct node* head, int index);
 
 
-/* Driver program to test above function*/
+// Driver Code
 int main()
 {
   int T,i,n,l,k;
@@ -61,9 +62,6 @@ int main()
     return 0;
 }
  
-// } Driver Code Ends
-
-
 /* Print he nth node in the linked list Node is defined as 
 /* Link list node
 struct node
@@ -71,7 +69,8 @@ struct node
     int data;
     struct node* next;
     
-    node(int x){
+    node(int x)
+    {
         data = x;
         next = NULL;
     }
@@ -83,12 +82,7 @@ struct node
 int GetNth(struct node* head, int index)
 {
     node* q;
-    int count = 0, i;
-    //q = head;
-    for (q = head; q != NULL; q = q->next)
-    {
-        count++;
-    }
+    int i;
     q = head;
     for (i = 0; i < index - 1; i++)
     {
